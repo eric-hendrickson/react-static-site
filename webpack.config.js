@@ -8,8 +8,9 @@ module.exports = {
 		path: __dirname,
 		libraryTarget: 'umd'
 	},
+	mode: 'development',
 	module: {
-		loaders: [
+		rules: [
 			{ test: /.jsx$/, loader: 'jsx-loader' }
 		]
 	},
