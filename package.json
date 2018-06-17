@@ -6,15 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --progress --colors",
-    "dev": "webpack-dev-server --progress --colors",
+    "dev": "webpack --watch",
     "start": "npm run dev"
   },
   "author": "Eric Hendrickson",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.4",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "create-react-class": "^15.6.3",
     "jsx-loader": "^0.13.2",
     "react": "^16.4.1",
     "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "static-site-generator-webpack-plugin": "^3.4.1",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.7",

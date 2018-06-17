@@ -1,6 +1,7 @@
 const React = require('react');
+const createReactClass = require('create-react-class');
 
-const Index = React.createClass({
+const Index = createReactClass({
 	render: function() {
 		return (
 			<main>

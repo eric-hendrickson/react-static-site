@@ -1,8 +1,9 @@
 const React = require('react');
 const Router = require('react-router');
 const RouteHandler = Router.RouteHandler;
+const createReactClass = require('create-react-class');
 
-const Root = React.createClass({
+const Root = createReactClass({
 	render: function() {
 		<html>
 			<head>

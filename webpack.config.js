@@ -1,20 +1,34 @@
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const data = require('./data');
+const path = require('path');
 
 module.exports = {
-	entry: './entry.js',
+	entry: './index.js',
 	output: {
 		filename: 'bundle.js',
-		path: __dirname,
-		libraryTarget: 'umd'
+		path: path.resolve(__dirname, 'build'),
+		libraryTarget: 'umd',
+		globalObject: "typeof self !== 'undefined' ? self : this",
 	},
 	mode: 'development',
 	module: {
 		rules: [
-			{ test: /.jsx$/, loader: 'jsx-loader' }
-		]
+			{ 
+				test: /.js$/,
+				use: [
+					'babel-loader',
+				],
+			},
+			{ test: /.jsx$/, use: ['babel-loader'] }
+		],
 	},
 	plugins: [
-		new StaticSiteGeneratorPlugin('bundle.js', data.routes, data)
+		new StaticSiteGeneratorPlugin('main', data.routes, data),
+		new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            server: { baseDir: ['build'] }
+        })
 	]
 }
