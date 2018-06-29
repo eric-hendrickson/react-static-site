@@ -20,7 +20,12 @@ module.exports = {
 					'babel-loader',
 				],
 			},
-			{ test: /.jsx$/, use: ['babel-loader'] }
+			{ 
+				test: /.jsx$/, 
+				use: [
+					'babel-loader'
+				] 
+			},
 		],
 	},
 	plugins: [

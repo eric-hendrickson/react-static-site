@@ -3,8 +3,7 @@ const Router = require('react-router');
 const RouteHandler = Router.RouteHandler;
 const createReactClass = require('create-react-class');
 
-const Root = createReactClass({
-	render: function() {
+const Root = () => (
 		<html>
 			<head>
 				<title>{this.props.title}</title>
@@ -13,7 +12,6 @@ const Root = createReactClass({
 				<RouteHandler {...this.props} />
 			</body>
 		</html>
-	}
-});
+);
 
 module.exports = Root;

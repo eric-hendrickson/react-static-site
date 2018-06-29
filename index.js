@@ -1,8 +1,21 @@
-const React = require('react');
-const Router = require('react-router-dom');
-const Routes = require('./Routes.jsx');
+import React from 'react'
+import { Link, StaticRouter as Router, Route } from 'react-router-dom'
+import ReactDOMServer from 'react-dom/server'
+import Routes from './Routes.jsx'
+
+const Home = () => (
+	<div>
+	  <h2>Home</h2>
+	  <p>Hello, world</p>
+	</div>
+  );
 
 module.exports = function render(locals, callback) {
-	var html = '<h1>Hello, world!</h1>';
-	callback(null, '<!DOCTYPE html>' + html)
+    var html = ReactDOMServer.renderToStaticMarkup(
+		<Router>
+			<Route exact path='/' component={Home} />
+		</Router>
+    );
+    callback(null, html)
 }
+
