@@ -1,0 +1,56 @@
+@import './node_modules/bootstrap/scss/bootstrap.scss';
+
+$secondary-background: #4572a7;
+$body-background: #1b2d42;
+$content-background: #b4c6db;
+$navbar-background: #2c8863;
+$footer-background: #1b2d42;
+
+$text-color: #eeeeee;
+
+$navbar-default-brand-color: #dfb834;
+$navbar-default-brand-hover-color: #ffafb8;
+$list-group-active-text-color: #dfb834;
+
+$font-size-base: 17px;
+$headings-font-weight: 600;
+$blockquote-font-size: $font-size-base;
+
+$link-color: #a13d61;
+
+body {
+	background-color: $body-background;
+}
+
+header {
+	background-color: $secondary-background;
+	display: flex;
+}
+
+nav {
+	background-color: $navbar-background;
+	color: $text-color;
+}
+
+
+footer {
+	background-color: $footer-background;
+	color: $text-color;
+	display: flex;
+}
+
+.content {
+	background-color: $content-background;
+}
+
+.content-wrap {
+	background-color: $secondary-background;
+}
+
+.img-responsive {
+	width: 50%;
+}
+
+.nav-link {
+	color: $text-color;
+}

@@ -1,4 +1,5 @@
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 const data = require('./data');
 const path = require('path');
@@ -14,17 +15,25 @@ module.exports = {
 	mode: 'development',
 	module: {
 		rules: [
+			{
+				test: /\.scss$/,
+				use: [
+					'style-loader',
+                	'css-loader', 
+                	'sass-loader',
+				],
+			},
 			{ 
-				test: /.js$/,
+				test: /\.js$/,
 				use: [
 					'babel-loader',
 				],
 			},
 			{ 
-				test: /.jsx$/, 
+				test: /\.jsx$/, 
 				use: [
 					'babel-loader'
-				] 
+				],
 			},
 		],
 	},
@@ -34,6 +43,6 @@ module.exports = {
             host: 'localhost',
             port: 3000,
             server: { baseDir: ['build'] }
-        })
+		}),
 	]
 }
